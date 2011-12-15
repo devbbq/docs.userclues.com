@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+  
+  <title><%= page_title %></title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<%= stylesheet_link_tag "userclues-docs" %>
+ 	<link href="/stylesheets/doculab/doculab.css" rel="stylesheet" type="text/css" media="all"/>
+  <!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="http://chargify.com/?css=styles/ie-css" media="screen" /><![endif]-->
+  <!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://chargify.com/?css=styles/ie8-css" /><![endif]-->
+
+</head>
+
+<body>
+  	<div id="wrapper">
+  		<div id="header">
+    		<div class="inner_nav clearfix">
+       
+        <span class="title">User Clues Documentation</span>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <div class="inner">
+          <div class="sidebar">
+            <div class="top">
+              <div class="bottom">
+                
+                <div id="table_of_contents">
+                  <ul>
+                  <%- sections.each do |section| -%>
+                    <li><strong><%= section.title -%></strong>
+                    <%- unless section.pages.empty? -%>
+                      <ul>
+                      <%- section.pages.each do |page| -%>
+                        <li><%= toc_link(page) -%></li>
+                      <%- end -%>
+                      </ul>
+                    <%- end -%>
+                    </li>
+                  <%- end -%>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div id="docupage">
+              <div id="breadcrumbs">
+                <%- unless index? -%>
+                <p><%= raw breadcrumbs.join(" &raquo; ") %></p>
+                <%- end -%>
+              </div>
+
+              <h1 class="title"><%= page.title %></h1>
+              
+              <%= content_for?(:doc_content) ? yield(:doc_content) : yield %>
+              
+              <%- if page && (page.next_page || page.previous_page)  -%>
+                <ul id="page_navigation">
+                  <%- if next_page = page.next_page -%>
+                    <li class="next"><span>Next page:</span> <%= toc_link(next_page) %></li>
+                  <%- end -%>
+                  <%- if previous_page = page.previous_page -%>
+                    <li class="prev"><span>Previous page:</span> <%= toc_link(previous_page)  %></li>
+                  <%- end -%>
+                </ul>
+              <%- end -%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="inner">
+        <div class="footer_column">
+          <h5>Features</h5>
+          <ul class="footer_links">
+            <li><a href="#">Feature 1</a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h5>Resources</h5>
+          <ul class="footer_links">
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h5>Community</h5>
+          <ul class="footer_links">
+            <li><a href="http://twitter.com/userclues" target="_blank">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="footer_column_last">
+          <h5>UserClues</h5>
+          <ul class="footer_links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Sign In</a></li>
+          </ul>
+        </div>        
+        <div class="footer_base">
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</body>
+</html>
