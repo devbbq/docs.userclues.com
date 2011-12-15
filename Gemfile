@@ -7,3 +7,5 @@ gem 'capistrano'
 gem 'capistrano_colors'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
+
+gem 'exception_notification', :require => 'exception_notifier'
