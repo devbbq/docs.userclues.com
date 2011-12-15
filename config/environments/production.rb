@@ -50,6 +50,6 @@ DocsUsercluesCom::Application.configure do
   
   config.middleware.use ExceptionNotifier,
     :email_prefix => "UserClues #{Rails.env} Exception ",
-    :sender_address => "UserClues Docs <kevin@devbbq.com>},
+    :sender_address => {"UserClues Docs" <kevin@devbbq.com>},
     :exception_recipients => %w{kevin@devbbq.com}
 end
