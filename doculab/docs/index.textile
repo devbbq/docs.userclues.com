@@ -1,0 +1,8 @@
+h3. Getting Started
+
+We suggest starting with our "Quick Start Guide", specifically one of the following pages:
+
+* "Chargify Overview":/overview - get quickly oriented to see where Chargify fits in to the big picture
+* "Terminology":/terminology - learn the terms we'll use throughout these docs
+* "Getting Started":/getting-started - a guide that helps you get up and running
+
