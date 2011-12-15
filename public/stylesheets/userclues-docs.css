@@ -69,12 +69,12 @@ a:hover {
 	font-family:Helvetica, Arial, sans-serif;
 	padding: 0;
 	border-bottom: 7px solid #1E90FF;
-	/*background: black url(http://chargify.com/images/interface/sitesprite2.png) repeat-x 0 -10px; */
+	background: black url(/images/sitesprite2.png) repeat-x 0 -10px;
 }
 #header_landing {
 	background-color: black;
 	width:100%;
-	background-image: url(http://chargify.com/images/interface/sitesprite2.png);
+	background-image: url(/images/sitesprite2.png);
 	background-position: 0 -10px;
 	background-repeat:repeat-x;
 	font-family:Helvetica, Arial, sans-serif;
@@ -232,7 +232,7 @@ a:hover {
 	padding-right: 0;
 	padding-top: 27px;
 	width:100%;
-	background:#fff url(http://chargify.com/images/interface/bg-content2.gif) repeat-x;
+	background:#fff url(/images/bg-content2.gif) repeat-x;
 }
 .containerc {
 	padding-bottom: 0px;
@@ -240,7 +240,7 @@ a:hover {
 	padding-right: 0;
 	padding-top: 27px;
 	width:100%;
-	background:#fff url(http://chargify.com/images/interface/bg-content2.gif) repeat-x;
+	background:#fff url(/images/bg-content2.gif) repeat-x;
 }
 .containerd {
 	padding-bottom: 0px;
@@ -248,7 +248,7 @@ a:hover {
 	padding-right: 0;
 	padding-top: 27px;
 	width:100%;
-	background:#fff url(http://chargify.com/images/interface/bg-content.gif) repeat-x;
+	background:#fff url(/images/bg-content.gif) repeat-x;
 	height: 108px;
 }
 .containerb {
@@ -257,7 +257,7 @@ a:hover {
 	padding-right: 0;
 	padding-top: 27px;
 	width:100%;
-	background:#fff url(http://chargify.com/images/interface/bg-content2.gif) repeat-x;
+	background:#fff url(/images/bg-content2.gif) repeat-x;
 }
 #content h1 {
 	letter-spacing: -1px;
@@ -1179,13 +1179,13 @@ a:hover {
 .sidebar {
 	float:left;
 	width:238px;
-	background: url(http://chargify.com/images/interface/bg-sidebar.gif) repeat-y;
+	background: url(/images/bg-sidebar.gif) repeat-y;
 }
 .sidebar .top {
-	background: url(http://chargify.com/images/interface/bg-sidebar-top.gif) no-repeat;
+	background: url(/images/bg-sidebar-top.gif) no-repeat;
 }
 .sidebar .bottom {
-	background: url(http://chargify.com/images/interface/bg-sidebar-bt2.gif) no-repeat 0 100%;
+	background: url(/images/bg-sidebar-bt2.gif) no-repeat 0 100%;
 	height:1%;
 	overflow:hidden;
 	padding: 21px 0 69px;
@@ -2396,7 +2396,7 @@ a.more:hover {
 #footer {
 	font-size: 8px;
 	width:100%;
-	background-image: url(http://chargify.com/images/interface/sitesprite2.png);
+	background-image: url(/images/sitesprite2.png);
 	background-position: 0px -101px;
 	background-repeat:repeat-x;
 	font-family:Helvetica, Arial, sans-serif;
