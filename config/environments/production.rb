@@ -47,9 +47,8 @@ DocsUsercluesCom::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
-  
-  config.middleware.use ExceptionNotifier,
-    :email_prefix => "UserClues #{Rails.env} Exception ",
-    :sender_address => %{"UserClues Docs" <kevin@devbbq.com>},
-    :exception_recipients => %w{kevin@devbbq.com}
+  #config.middleware.use ExceptionNotifier,
+  #  :email_prefix => "UserClues #{Rails.env} Exception ",
+  #  :sender_address => %{"UserClues Docs" <kevin@devbbq.com>},
+  #  :exception_recipients => %w{kevin@devbbq.com}
 end
