@@ -1,0 +1,116 @@
+h2. Available Routes
+
+|_.Name|_.Method|_.Url|_.Purpose|
+|"Create":#create|_POST_|https://api.userclues.com/report/queries/|Create a flexible query and return its results.|
+
+h2(#create). Create
+
+Create a flexible query and return its results. Results include versatile averages and summary statistics.
+
+h3. Input
+
+- @type@  :=
+%(optional)Optional%. Specifies the resource the query will be against. This can either be "event" or "session" depending on what you're looking for.
+*Type*: String
+*Default*: "session"
+*Possible Values*:
+%(example)"session"%
+%(example)"event"%
+=:
+
+- @from@  := 
+%(optional)Optional%. Specifies the starting date and time for reporting. Should be in the format _YYYY-MM-DD HH:MM:SS_ and will be interpreted as the App's timezone setting.
+*Type*: String
+*Default*: 7 days ago
+*Examples*:
+%(example)"2011-12-01 05:00:00"%
+=:
+
+- @to@  := 
+%(optional)Optional%. Specifies the end date and time for reporting. Should be in the format _YYYY-MM-DD HH:MM:SS_ and will be interpreted as the App's timezone setting.
+*Type*: String
+*Default*: Now
+*Examples*:
+%(example)"2011-12-03 10:00:00"%
+=:
+
+- @dimension@  := 
+%(optional)Optional%. Can be either a string or an array of strings specifying how to dimension the results. See below for possible values.
+*Type*: String | Array(String)
+*Default*: 'date'
+*Possible Values*:
+%(example)"date" - Dimensions on the date alone%
+%(example)"datetime" - Dimensions on the date and the hour%
+%(example)"event_data" - Dimensions on the event data specified%
+%(example)"session_data" - Dimensions on the session data specified%
+=:
+
+- @feature_id@  := 
+%(optional)Optional%. Limit the results (segment) to apply to only a specific feature id.
+*Type*: Integer
+*Examples*:
+%(example)839274%
+=:
+
+- @event_data@  := 
+%(optional)Optional%. Limit the results to apply to only behaviours that have the specified event data.
+*Type*: Hash
+*Examples*:
+{
+  'key': _[key]_,
+  'value': _[value]_
+}
+=:
+
+- @experience@  := 
+%(optional)Optional%. Limit the results to apply to only sessions that have an experience path like the one specified. Specify an experience by a pipe-delimited string of feature id values. Ensure that the string has a leading and trailing pipe.
+*Type*: String
+*Examples*:
+%(example)"|23532|5436|2645|23445|"%
+=:
+
+h3. Output
+
+Note that the structure of the response object will change based on the @dimension@ input parameter. For instance, if you chose to pass 'datetime' as the value of @dimension@, then the response will group its results based on the date and hour:
+
+bc. {
+  "2011-12-01 00:00:00" : {  },
+  "2011-12-01 01:00:00" : {  },
+  "2011-12-01 02:00:00" : {  },
+  "2011-12-01 03:00:00" : {  },
+  "2011-12-01 04:00:00" : {  },
+  "2011-12-01 05:00:00" : {  },
+  "2011-12-01 06:00:00" : {  },
+  "2011-12-01 07:00:00" : {  },
+  "2011-12-01 08:00:00" : { "average_breadth" : "9",
+      "average_depth" : "1",
+      "average_duration" : "398",
+      "average_event_count" : "11",
+      "dimension_hour" : "8",
+      "dimension_min" : "6",
+      "item_created_at_date" : "2011-12-01",
+      "item_created_at_dimension_group" : "2011-12-01 08:00:00",
+      "item_created_at_time" : "2000-01-01T08:06:41Z",
+      "record_count" : "1"
+    },
+  "2011-12-01 09:00:00" : { "average_breadth" : "5",
+      "average_depth" : "1",
+      "average_duration" : "89",
+      "average_event_count" : "5",
+      "dimension_hour" : "9",
+      "dimension_min" : "56",
+      "item_created_at_date" : "2011-12-01",
+      "item_created_at_dimension_group" : "2011-12-01 09:00:00",
+      "item_created_at_time" : "2000-01-01T09:56:59Z",
+      "record_count" : "1"
+    },
+  "2011-12-01 10:00:00" : {  }
+}
+
+- @record_count@  := 
+The number of records associated with the segmentation.
+*Type*: String
+*Default*: 0
+*Examples*:
+%(example)10%
+=:

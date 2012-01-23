@@ -1,0 +1,8 @@
+When you create a profile for your App, UserClues will assign it an @API Authentication Key@.
+
+Both the "Reporting":api-reporting-introduction and "Tracking":api-tracking-introduction APIs utilize @Basic HTTP Authentication@ to authenticate the request and determine which App the API should reference when performing its magic. Therefore, every request made to the API must include the following credentials:
+
+pre. Username: [Your API Authentication Key]
+Password: [Blank]
+
+ 

@@ -8,8 +8,16 @@ Doculab::TableOfContents.define do
   section "User Clues API Basics" do
     page "API Introduction"
     page "API Authentication"
-    page "API Resources"
-    page "API Code Samples & Libraries", :permalink => "api-code"
+  end
+  
+  section "Reporting API" do
+    page "Introduction", :permalink => 'api-reporting-introduction'
+    page "API: Queries", :permalink => 'api-reporting-queries'
+  end
+  
+  section "Tracking API" do
+    page "Introduction"
+    page "API: Events"
   end
   
   section "Developer Libraries" do
@@ -19,22 +27,6 @@ Doculab::TableOfContents.define do
     page ".NET", :permalink => "dot-net-code"
   end
   
-  section "Library API" do
-    page "API: Sessions"
-    page "API: Events"
-    
-  end
-  
-  
-  section "User Clues API Resources" do
-    page "API: Products"
-    page "API: Components"
-    page "API: Coupons"
-    page "API: Customers"
-    page "API: Subscriptions"
-    page "API: Transactions"
-  end
-
 
   section "Release Information" do
     page "Release Notes"

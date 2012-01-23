@@ -29,13 +29,17 @@ a:hover {
 	text-decoration: none;
 	border-bottom-style: none;
 }
+ul li {
+	margin-bottom: 5px;
+}
 #wrapper {
 	width:100%;
 	margin:0 auto;
 	overflow:hidden;
 }
 
-
+.example {padding-left:2em;}
+span.optional {color:darkgreen;background-color:#ded;padding:1px;}
 
 
 

@@ -1,0 +1,6 @@
+UserClues exposes a versatile REST API giving developers access to both its "Reporting System":api-reporting-introduction and its "Tracking System":release-notes.
+
+* *Reporting API*: Exposes access to all the data that is reported by your App after we've tweaked it and optimized it for you. Use the resources here to _READ_ your App's data and create custom reports.
+* *Tracking API*: Is the interface your App uses to record your users' behaviour and experience. Installing UserClues "client libraries":client_libraries into your App is the most common way to interact with this API and is the responsible for all _WRITE_ operations.
+
+Both APIs make use of the same "Authentication protocol":api-authentication.

@@ -1,0 +1,1 @@
+Exposes access to all the data that is reported by your App after we've tweaked it and optimized it for you. Use the resources here to _READ_ your App's data and create custom reports.
